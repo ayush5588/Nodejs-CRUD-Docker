@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-08">
+        <meta name="viewport" content="width=device-width,initia-scale=1.0"> 
+        <title>User Data</title>
+    </head>
+    <body>
+        <p><%=data.info%></p>
+        <%if(data.info == "success"){%>
+            <ul>
+            <% data.array.forEach((user)=>{%>
+                <li><b>ID: </b><%=user.id%></li>
+                <li><b>Name: </b><%=user.name%></li>
+                <li><b>Email: </b><%=user.email%></li>
+                <input type="submit" name="update" value="update">
+            </br>
+            <%});%>
+            
+            </ul>
+        <%}%>
+
+        <%if(data.info == "error"){%>
+            <p><%=data.message%></p>
+        <%}%>
+
+    </body>
+</html>

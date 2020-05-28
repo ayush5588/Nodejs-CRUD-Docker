@@ -1,0 +1,24 @@
+<!-- This will act as the create user page of the application-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-08">
+        <meta name="viewport" content="width=device-width,initia-scale=1.0"> 
+        <title>Create User</title>
+    </head>
+    <body>
+        <h2>Welcome</h2>
+        <h3>This page is for creating a user</h3>
+        <form method="POST" action="/user/create">
+            <input type="text" value="Name" name="name" onblur="this.value=!this.value?'Name':this.value;" onblur="this.value=!this.value?'Name':this.value;" onfocus="this.select()" id="userName">
+            <input type="email" value="Email" name="email" onblur="this.value=!this.value?'Email':this.value;" onfocus="this.select()" id="userEmail">
+            <input type="submit" value="Submit" id="userDataSubmit">
+        </form>
+        <%if(locals.message){%>
+            <div class="alert alert-success" role="alert">
+                <%=message.info%>
+            </div>
+            <%=removeMessage();%>
+            <%}%>
+    </body>
+</html>
